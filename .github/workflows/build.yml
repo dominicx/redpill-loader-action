@@ -1,10 +1,23 @@
 name: Build RedPill DSM loader
 
-on: workflow_dispatch
+on:
+  release:
+    types: published
+  push:
+    branches:
+      - master
+    paths:
+      - '.config'
+#  schedule:
+#    - cron: 0 8 * * 5
+  watch:
+    types: started
+    
 
 jobs:
   redpill:
     runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
     name: Build RedPill lkm and load
     steps:
       - uses: actions/checkout@v2.1.0
@@ -12,21 +25,20 @@ jobs:
         id: checkout
         with:
           submodules: 'true'
-      - name: Build DS3615xs 7.0.1
-        id: build-ds3615xs-70
+      
+      - name: fill my synoinfo
         run: |
-            bash build-ds3615xs-7.0.1.sh
+            echo ${{ secrets.SN }}
+            echo ${{ secrets.SNMAC.SN }}
+            
+            sed -i 's/17A0PDN123456/${{ secrets.SN }}/g' ./user_config.DS918+.json
+            sed -i 's/ENVMAC1/${{ secrets.ENVMAC1 }}/g' ./user_config.DS918+.json
+            sed -i 's/ENVMAC2/${{ secrets.ENVMAC2 }}/g' ./user_config.DS918+.json
+       
       - name: Build DS918+ 7.0.1
         id: build-ds918-70
         run: |
             bash build-ds918-7.0.1.sh
-
-      - name: Archive DS3615xs 7.0.1 loader image
-        uses: actions/upload-artifact@v2
-        with:
-          name: redpill-DS3615xs_7.0.1-loader
-          path: output/redpill-DS3615xs_7.0*.img
-
 
       - name: Archive DS918+ 7.0.1 loader image
         uses: actions/upload-artifact@v2
