@@ -36,6 +36,7 @@ jobs:
       - name: Build DS918+ 7.0.1
         id: build-ds918-70
         run: |
+            set +u
             bash build-ds918-7.0.1.sh
 
       - name: Archive DS918+ 7.0.1 loader image
