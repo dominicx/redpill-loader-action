@@ -5,15 +5,14 @@
     "netif_num":"2",
     "sn": "17A0PDN123456",
     "mac1": "ENVMAC1",
-    "mac2": "ENVMAC2"
+    "mac2": "ENVMAC2",
+    "DiskIdxMap": "100003",
+    "SataPortMap": "124"
   },
   "synoinfo": {
     "supportsystemperature": "no",
     "supportsystempwarning": "no",
-    "maxdisks" : "16",
-    "DiskIdxMap": "100003",
-    "SataPortMap": "124"
-
+    "maxdisks" : "16"
   },
   "ramdisk_copy": {}
 }
