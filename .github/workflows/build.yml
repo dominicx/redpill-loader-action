@@ -27,11 +27,15 @@ jobs:
           submodules: 'true'
       
       - name: fill my synoinfo
+        env:
+          SN: ${{ secrets.SN }}
+          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
         run: |
             echo ${{ secrets.SN }}
             echo ${{ secrets.SNMAC.SN }}
-            echo ${{ env.SN }}
+            echo "${{ env.SN }}"
             echo ${{ env.SNMAC.SN }}
+            echo "$SN"
             
             sed -i 's/17A0PDN123456/${{ env.SN }}/g' ./user_config.DS918+.json
             sed -i 's/ENVMAC1/${{ env.ENVMAC1 }}/g' ./user_config.DS918+.json
