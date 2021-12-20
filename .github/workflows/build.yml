@@ -28,9 +28,9 @@ jobs:
       
       - name: fill my synoinfo
         run: |
-            sed -i 's/17A0PDN123456/${{ env.SN }}/g' ./user_config.DS918+.json
-            sed -i 's/ENVMAC1/${{ env.MAC1 }}/g' ./user_config.DS918+.json
-            sed -i 's/ENVMAC2/${{ env.MAC2 }}/g' ./user_config.DS918+.json
+            sed -i 's/17A0PDN123456/${{ secrets.SN }}/g' ./user_config.DS918+.json
+            sed -i 's/ENVMAC1/${{ secrets.MAC1 }}/g' ./user_config.DS918+.json
+            sed -i 's/ENVMAC2/${{ secrets.MAC2 }}/g' ./user_config.DS918+.json
             cat ./user_config.DS918+.json
        
       - name: Build DS918+ 7.0.1
