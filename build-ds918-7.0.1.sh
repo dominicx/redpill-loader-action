@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set +u
+setenv TERMINFO /usr/lib/terminfo
 # prepare build tools
 sudo apt-get update && sudo apt-get install --yes --no-install-recommends ca-certificates build-essential git libssl-dev curl cpio bspatch vim gettext bc bison flex dosfstools kmod jq
 
@@ -30,6 +31,6 @@ cd redpill-load
 cp ${root}/user_config.DS918+.json ./user_config.json
 ./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-acpid/rpext-index.json
 
-sudo ./build-loader.sh 'DS918+' '7.0.1-42218'
+./build-loader.sh 'DS918+' '7.0.1-42218'
 mv images/redpill-DS918+_7.0.1-4221*.img ${root}/output/
 cd ${root}
