@@ -4,7 +4,7 @@
     "pid": "0x0001",
     "netif_num":"2",
     "sn": "17A0PDN123456",
-    "mac1": "ENVMAC1"
+    "mac1": "ENVMAC1",
     "mac2": "ENVMAC2"
   },
   "synoinfo": {
@@ -17,3 +17,6 @@
   },
   "ramdisk_copy": {}
 }
+
+
+
