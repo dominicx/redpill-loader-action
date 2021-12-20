@@ -32,9 +32,10 @@ jobs:
           TWINE_PASSWORD: ${{ env.SN }}
         run: |
             echo ${{ secrets.SN }}
-            echo ${{ secrets.SNMAC.SN }}
+            echo ${{ secrets.MAC1 }}
             echo "${{ env.SN }}"
-            echo ${{ env.SNMAC.SN }}
+            echo ${{ env.MAC1 }}
+            echo "${{ env.MAC1 }}"
             echo "$SN"
             
             sed -i 's/17A0PDN123456/${{ env.SN }}/g' ./user_config.DS918+.json
