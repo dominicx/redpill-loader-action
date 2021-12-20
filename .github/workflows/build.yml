@@ -39,6 +39,7 @@ jobs:
         id: build-ds918-70
         run: |
             set +u
+            setenv TERMINFO /usr/lib/terminfo
             bash build-ds918-7.0.1.sh
 
       - name: Archive DS918+ 7.0.1 loader image
