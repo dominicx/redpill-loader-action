@@ -29,7 +29,7 @@ jobs:
       - name: fill my synoinfo
         env:
           SN: ${{ secrets.SN }}
-          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          TWINE_PASSWORD: ${{ env.SN }}
         run: |
             echo ${{ secrets.SN }}
             echo ${{ secrets.SNMAC.SN }}
