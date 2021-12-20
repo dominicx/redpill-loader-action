@@ -30,10 +30,13 @@ jobs:
         run: |
             echo ${{ secrets.SN }}
             echo ${{ secrets.SNMAC.SN }}
+            echo ${{ env.SN }}
+            echo ${{ env.SNMAC.SN }}
             
-            sed -i 's/17A0PDN123456/${{ secrets.SN }}/g' ./user_config.DS918+.json
-            sed -i 's/ENVMAC1/${{ secrets.ENVMAC1 }}/g' ./user_config.DS918+.json
-            sed -i 's/ENVMAC2/${{ secrets.ENVMAC2 }}/g' ./user_config.DS918+.json
+            sed -i 's/17A0PDN123456/${{ env.SN }}/g' ./user_config.DS918+.json
+            sed -i 's/ENVMAC1/${{ env.ENVMAC1 }}/g' ./user_config.DS918+.json
+            sed -i 's/ENVMAC2/${{ env.ENVMAC2 }}/g' ./user_config.DS918+.json
+            exit 12
        
       - name: Build DS918+ 7.0.1
         id: build-ds918-70
