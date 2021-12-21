@@ -5,7 +5,7 @@
     "netif_num":"2",
     "sn": "17A0PDN123456",
     "mac1": "ENVMAC1",
-    "mac2": "ENVMAC2",
+    "mac2": "ENVMAC2"
   },
   "synoinfo": {
     "supportsystemperature": "no",
