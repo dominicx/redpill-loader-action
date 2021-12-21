@@ -35,12 +35,15 @@ jobs:
 
        
       - name: Build DS918+ 7.0.1
-        id: build-ds918-70
+        id: build
         run: |
             bash build-ds918-7.0.1.sh
+            echo "::set-output name=status::success"
+            
 
       - name: Archive DS918+ 7.0.1 loader image
         uses: actions/upload-artifact@v2
+        if: steps.build.outputs.status == 'success' && !cancelled()
         with:
           name: redpill-DS918+_7.0.1-loader
           path: output/redpill-DS918+_7.0*.img
