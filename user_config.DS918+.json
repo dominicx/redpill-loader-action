@@ -6,9 +6,6 @@
     "sn": "17A0PDN123456",
     "mac1": "ENVMAC1",
     "mac2": "ENVMAC2",
-    "DiskIdxMap": "100003",
-    "SataPortMap": "124",
-    "SasIdxMap": "0"
   },
   "synoinfo": {
     "supportsystemperature": "no",
