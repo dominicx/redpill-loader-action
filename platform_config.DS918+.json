@@ -76,8 +76,8 @@
           "linux /zImage @@@CMDLINE@@@",
           "echo Loading initramfs...",
           "initrd /rd.gz /custom.gz",
-          "echo Starting kernel with USB boot"
-          "echo Screen will stop updating shortly."
+          "echo Starting kernel with USB boot",
+          "echo Screen will stop updating shortly.",
           "echo please open http://find.synology.com tocontinue."
         ],
         "cmdline": {
@@ -98,8 +98,8 @@
           "echo Loading initramfs...",
           "initrd /rd.gz /custom.gz",
           "echo Starting kernel with SATA boot",
-          "echo WARNING: SATA boot support on this platform is experimental!"
-          "echo Screen will stop updating shortly."
+          "echo WARNING: SATA boot support on this platform is experimental!",
+          "echo Screen will stop updating shortly.",
           "echo please open http://find.synology.com tocontinue."
         ],
         "cmdline": {
